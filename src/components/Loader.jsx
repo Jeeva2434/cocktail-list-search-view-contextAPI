@@ -2,7 +2,15 @@ import React from 'react'
 
 const Loader = () => {
   return (
-    <div>Loader...</div>
+    <section className='loader container'>
+      <div className='cascade'>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </section>
   )
 }
 

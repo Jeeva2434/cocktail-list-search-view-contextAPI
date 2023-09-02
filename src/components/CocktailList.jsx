@@ -1,48 +1,22 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom';
+import Loader from './Loader';
+import {UseGlobalContext} from '../ContextAPI'
 
-const URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
+const CocktailList = () => {
+    const{cocktailList,isLoading} = UseGlobalContext();
 
-const CocktailList = ({searchTerm,setSearchTerm}) => {
+    if(isLoading){
+      return <Loader/>
+    }
 
-    const[cocktailList,setCocktailList] = useState([]);
-
-
-    const fetchCockTail = useCallback(async() => {
-       try{
-          const response = await fetch(`${URL}${searchTerm}`);
-          const data = await response.json();
-          console.log(data);
-           
-          const cocktailData = data.drinks.map((item,index)=>{
-            const {
-                idDrink : id,
-                strDrinkThumb : image,
-                strDrink : name,
-                strAlcoholic : alcohol,
-                strGlass : glass
-            } = item;
-
-            return {
-                id,
-                image,
-                name,
-                alcohol,
-                glass
-            }
-          })
-          
-          setCocktailList(cocktailData);
-           
-       }catch(error){
-        console.log(error);
-       }
-    },[searchTerm]);
-
-    useEffect(()=>{
-      fetchCockTail();
-    },[searchTerm,fetchCockTail]);
-
+    if(!cocktailList){
+        return(
+            <div className='emptyList'>
+                Oops! No items found...
+            </div>
+        )
+    }
 
     return (
         <section className='cocktailList'>

@@ -1,12 +1,10 @@
 import React, { useEffect, useRef} from 'react'
+import {UseGlobalContext} from '../ContextAPI';
 
-const Search = ({searchTerm,setSearchTerm}) => {
-
+const Search = () => {
+    const{setSearchTerm} = UseGlobalContext();
+     
     const searchField = useRef(null); 
-
-    useEffect(()=>{
-        console.log(searchTerm);
-    },[searchTerm]);
 
     useEffect(()=>{
         searchField.current.focus();
