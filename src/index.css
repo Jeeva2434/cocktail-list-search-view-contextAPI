@@ -11,3 +11,278 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.App{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 99vw;
+  padding: 0 27px;
+  /* overflow-y: auto; */
+}
+
+/* nav */
+
+nav{
+  background-color: aliceblue;
+  box-shadow: 0px 3px 4px rgba(0,0,0,0.2),0px 3px 6px rgba(0,0,0,0.2);
+}
+
+.nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 5rem;
+  height: auto; 
+}
+
+.container{
+  width: 70vw;
+  margin: 0 auto;
+}
+
+.logo-title{
+  height: 100%;
+  padding-block: 15px;
+  font-size: 24px;
+  font-weight: 600;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  letter-spacing: 1.5px;
+}
+
+.logo-title span{
+  color: green;
+  font-weight: 800;
+}
+
+.nav_list{
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+}
+
+.nav_list li .listContent{
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+  padding: 28px 24px;
+  font-family: 'Courier New', Courier, monospace;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.nav_list li .listContent:hover{
+  background-color:rgba(223, 223, 223,0.3);
+  color: rgb(64, 99, 203);
+}
+
+/* home */
+
+.home{
+  margin-block: 100px;
+}
+
+.search{
+  height:auto;
+  margin-bottom:80px;
+  display: grid;
+  place-items: center;
+}
+
+.search_container{
+  width: 50%;
+  background-color: rgb(246, 246, 246);
+  border-radius: 2px;
+  box-shadow: 1px 2px 3px rgba(0,0,0,0.2);
+}
+
+.search form{
+  text-align: center;
+  padding: 20px 0;
+}
+ 
+.search label{
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: 'Courier New', Courier, monospace;
+  margin-top: 10px;
+  color: green;
+}
+
+.search input[type='text']{
+  width: 80%;
+  height: 30px;
+  display: block;
+  margin: 20px auto;
+  font-size: 18px;
+}
+
+.cocktailList{
+  width: 100%;
+}
+
+.list_item{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.cocktail_item{
+  width: 95%;
+  justify-self: center;
+  height: auto;
+  box-shadow: -6px 8px 8px rgba(0,0,0,0.2),6px 8px 8px rgba(0,0,0,0.2);
+}
+
+.itemCard_img_container{
+  width: 100%;
+}
+
+.itemCard_img_container img{
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.itemCard_description{
+  padding-block: 28px;
+  padding-left:30px;
+}
+
+.itemCard_name{
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.itemCard_glass{
+  font-size: 22px;
+  color: black;
+  margin-block: 12px;
+  font-weight: 400;
+  font-family: cursive;
+}
+
+.itemCard_alcohol{
+  font-size: 18px;
+  color: rgb(135, 120, 120);
+}
+
+.btn_details{
+  display: inline-block;
+  text-decoration: none;
+  background-color: green;
+  border: transparent;
+  padding: 14px 28px;
+  border-radius: 4px;
+  color: white;
+  font-size: 18px;
+  margin-top: 16px;
+  font-weight: 600;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+  cursor: pointer;
+}
+
+/* single item detailed view */
+
+.singleCocktail{
+  margin-top: 40px;
+}
+
+.singleCocktail .btn_details{
+  transform: translateX(-50%);
+  position: relative;
+  left: 50%;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.single_title{
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-block: 30px 60px ;
+}
+
+.details_view_area{
+  display: grid;
+  grid-template-columns: 0.7fr 1fr;
+  gap: 30px;
+}
+
+.detail_img_container{
+  width: 85%;
+  justify-self: end;
+}
+
+.detail_img_container img{
+  width: 100%;
+  height: 100%;
+}
+
+.detail_description{
+  list-style-type: none;
+  margin: 50px 0 50px 20px;
+  padding: 0;
+  font-size: 18px;
+}
+
+.detail_description li{
+  margin-block:28px;   
+}
+
+.sub_head{
+  background-color: rgb(181, 241, 148);
+  padding: 7px 14px;
+  border-radius: 8px;
+  margin-right: 8px;
+  font-weight: 600;
+  color: rgb(59, 90, 59);
+  display: inline-block;
+}
+
+.aboutUs{
+  text-align: center;
+}
+
+.aboutUs h2{
+  margin-top: 90px;
+  font-size: 32px;
+}
+
+.aboutUs p{
+  width: 70%;
+  text-align: justify;
+  margin-inline: auto;
+  line-height: 30px;
+  font-family: monospace;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 60px;
+}
+
+@media screen and (max-width:1370px){
+  .search_container{
+    width: 100%;
+  }
+  .nav{
+    flex-wrap: wrap;
+  }
+  .list_item{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width:768px){
+  .list_item{
+    grid-template-columns: 1fr;
+  }
+  .cocktail_item{
+    width: 100%;
+  }
+  .itemCard_img_container img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+}
